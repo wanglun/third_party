@@ -81,7 +81,7 @@ function build_protobuf() {
 	tar xzf ${PROTOBUF_TAR} -C ${DIR}
 	tar xzf ${GTEST15_TAR} -C ${DIR}
 	cd ${PROTOBUF_DIR} && cp -a ${GTEST15_DIR} ./gtest
-	./autogen.sh && ./configure --prefix=${OUTPUT} && make -j${CORES} && make install
+	./autogen.sh && ./configure --prefix=${OUTPUT} --with-zlib && make -j${CORES} && make install
 }
 
 function build_leveldb() {
